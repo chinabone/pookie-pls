@@ -45,7 +45,7 @@
 
     <h1>Will you be my Valentine? 💖</h1>
     
-    <div class="buttons">
+    <div class="buttons" id="button-container">
         <button id="yes-btn" onclick="sayYes()">Yes</button>
         <button id="no-btn" onclick="pressNo()">No</button>
     </div>
@@ -53,6 +53,8 @@
     <script>
         let noButton = document.getElementById("no-btn");
         let yesButton = document.getElementById("yes-btn");
+        let buttonContainer = document.getElementById("button-container");
+
         let phrases = ["Are you sure?", "Really?", "Sure?", "Pookie pls?", "Don't break my heart 😢", "Last chance!"];
         let index = 0;
         let yesSize = 1.2;
@@ -70,8 +72,7 @@
         }
 
         function sayYes() {
-            alert("Yay! 💕 You made my day!");
-            document.body.innerHTML = "<h1>Yay! 💖 Can't wait for our date! 🥰</h1>";
+            buttonContainer.innerHTML = "<h2>Yay! 💖 Can't wait for our date! 🥰</h2>";
         }
     </script>
 
