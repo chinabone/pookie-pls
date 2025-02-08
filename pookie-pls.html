@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? 💖</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #d63384;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yes-btn {
+            background-color: #ff69b4;
+            color: white;
+        }
+        #no-btn {
+            background-color: #ffcccc;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my Valentine? 💖</h1>
+    
+    <div class="buttons">
+        <button id="yes-btn" onclick="sayYes()">Yes</button>
+        <button id="no-btn" onclick="pressNo()">No</button>
+    </div>
+
+    <script>
+        let noButton = document.getElementById("no-btn");
+        let yesButton = document.getElementById("yes-btn");
+        let phrases = ["Are you sure?", "Really?", "Sure?", "Pookie pls?", "Don't break my heart 😢", "Last chance!"];
+        let index = 0;
+        let yesSize = 1.2;
+
+        function pressNo() {
+            if (index < phrases.length) {
+                noButton.innerText = phrases[index];
+                index++;
+            } else {
+                noButton.innerText = "You're breaking my heart 💔";
+            }
+            
+            yesSize += 0.3; // Increase size
+            yesButton.style.fontSize = yesSize + "rem";
+        }
+
+        function sayYes() {
+            alert("Yay! 💕 You made my day!");
+            document.body.innerHTML = "<h1>Yay! 💖 Can't wait for our date! 🥰</h1>";
+        }
+    </script>
+
+</body>
+</html>
